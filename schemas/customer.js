@@ -4,11 +4,6 @@ export default {
   title: 'Customer',
   fields: [
     {
-      name: 'initials',
-      title: 'Initials',
-      type: 'string',
-    },
-    {
       name: 'firstName',
       title: 'First Name',
       type: 'string',
@@ -29,10 +24,9 @@ export default {
       type: 'string',
     },
     {
-      name: 'newsletterConfirmation',
-      title: 'Newsletter Confirmation',
-      type: 'boolean',
-      default: false,
+      name: 'message',
+      title: 'Message',
+      type: 'text',
     },
   ],
 }

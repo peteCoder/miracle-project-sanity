@@ -1,7 +1,7 @@
 export default {
-  name: 'country',
-  title: 'Country',
-  type: "document",
+  name: 'city',
+  title: 'City',
+  type: 'document',
   fields: [
     {
       type: 'string',

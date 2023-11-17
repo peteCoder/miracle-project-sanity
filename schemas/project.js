@@ -14,6 +14,12 @@ export default {
       name: 'description',
     },
     {
+      name: 'bannerImage',
+      title: 'Hero Banner Image',
+      type: 'image',
+      option: [{hotspot: true}],
+    },
+    {
       type: 'string',
       title: 'Location',
       name: 'location',
@@ -32,27 +38,22 @@ export default {
       },
     },
     {
-      name: 'country', // Added field for project type
+      name: 'country',
       title: 'Country',
-      type: 'string',
-      options: {
-        list: [
-          {title: 'Jordan', value: 'jordan'},
-          {title: 'Qatar', value: 'qatar'},
-          {title: 'Saudi Arabia', value: 'saudi_arabia'},
-          {title: 'United Arab Emirates', value: 'uae'},
-        ],
-      },
+      type: 'reference',
+      to: [{type: 'country'}],
+    },
+    {
+      name: 'city',
+      title: 'City',
+      type: 'reference',
+      to: [{type: 'city'}],
     },
     {
       name: 'gallery',
       title: 'Gallery',
       type: 'array',
-      of: [
-        {
-          type: 'gallery',
-        },
-      ],
+      of: [{type: 'reference', to: [{type: 'gallery'}]}],
     },
     {
       name: 'price',
@@ -74,20 +75,31 @@ export default {
       name: 'landmarks',
       title: 'Add Landmark',
       type: 'array',
-      of: [{type: 'landmark'}],
+      of: [{type: 'reference', to: [{type: 'landmark'}]}],
     },
     {
       name: 'amenities',
       title: 'Add Amenities',
       type: 'array',
-      of: [{type: 'amenities'}],
+      of: [{type: 'reference', to: [{type: 'amenities'}]}],
     },
 
     {
       name: 'faqs',
       title: 'FAQs',
       type: 'array',
-      of: [{type: 'faqs'}],
+      of: [{type: 'reference', to: [{type: 'faqs'}]}],
+    },
+
+    {
+      name: 'community',
+      title: 'Commumnty',
+      type: 'reference',
+      to: [
+        {
+          type: 'community',
+        },
+      ],
     },
   ],
 }
